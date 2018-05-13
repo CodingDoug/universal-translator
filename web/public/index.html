@@ -1,0 +1,58 @@
+<html>
+<!--
+Copyright 2018 Google Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BabelFire</title>
+
+  <script defer src="/__/firebase/5.5.2/firebase-app.js"></script>
+  <script defer src="/__/firebase/5.5.2/firebase-firestore.js"></script>
+  <script defer src="/__/firebase/init.js"></script>
+  <script defer src="index.js"></script>
+
+  <link rel="stylesheet" href="index.css"/>
+</head>
+
+<body>
+  <h1>BabelFire</h1>
+  <p>This webpage plays back the last sentence spoken on stage in the language you select.</p>
+
+  <div id="translation_box" class="box">
+    <label for="language">Select language</label>
+    <select id="language" name="language">
+      <option value="en" selected="selected">English</option>
+      <option value="fr">Français</option>
+      <option value="pl">Polski</option>
+      <option value="es">Español</option>
+      <option value="pt">Português</option>
+      <option value="de">Deutsch</option>
+      <option value="ja">日本語</option>
+      <option value="hi">हिन्दी</option>
+      <option value="nl">Nederlands</option>
+      <option value="he">עברית</option>
+      <option value="ru">русский</option>
+      <option value="uk">Українська</option>
+    </select>
+  </div>
+
+  <div class="box">
+    <div>Translation</div>
+    <pre id="translation"></pre>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BabelFire Live</string>
+    <string name="user_language">Language</string>
+    <string name="translated">Translated:</string>
+    <string name="sign_out">Sign out</string>
+    <string name="stop_recording">Stop recording</string>
+    <string name="record">Record</string>
+</resources>
