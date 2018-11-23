@@ -1,3 +1,4 @@
 /node_modules
 /service-account-credentials.json
 /lib
+/firebase-debug.log

@@ -30,6 +30,7 @@ This setup assumes you are already familiar with how Firebase and Google Cloud p
 
 1. `cd backend`
 1. `firebase use --add`, then select the newly created project, and give it the alias "default"
+1. `cd functions; npm install` to set up the Cloud Functions node project.
 1. `firebase deploy` to deploy Cloud Functions code, Firestore security rules, and Cloud Storage security rules
 1. Optional - if you want to run the scripts in `functions/dev`, download a service account and place it in `service-account-credentials.json` in the `functions` folder.
 
