@@ -5,7 +5,8 @@
     "module": "commonjs",
     "noImplicitReturns": true,
     "outDir": "lib",
-    "sourceMap": true
+    "sourceMap": true,
+    "strict": true
   },
   "compileOnSave": true,
   "include": [

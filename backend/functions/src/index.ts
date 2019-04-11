@@ -106,10 +106,10 @@ functions.storage.object().onFinalize(async object => {
         console.log('translations:', translations)
 
         // Map each language code to the translated text
-        const translationsMap = translations.reduce((map, obj) => {
+        const translationsMap = translations.reduce<{[key:string]: string}>((map, obj) => {
             map[obj.language] = obj.translation
             return map
-        }, {})
+        }, {} as {string: string})
 
         // And update the original document with the translations
         await docRef.update({ translations: translationsMap })
@@ -161,6 +161,9 @@ functions.firestore.document(`${UPLOADS_COLLECTION}/{id}`).onDelete(async snapsh
 
 function getRecordingFileInfo(object: functions.storage.ObjectMetadata): RecordingFileInfo {
     const path = object.name   //  uploads/{uid}/{docId}
+    if (!path) {
+        throw Error("File name was undefined")
+    }
     const parts = path.split('/')
     if (parts.length !== 3) {
         throw new Error("Path isn't three parts long")

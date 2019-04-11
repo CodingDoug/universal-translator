@@ -35,7 +35,7 @@ const request = {
 }
 
 client.recognize(request)
-.then((response) => {
+.then((response: any) => {
     const transcript = response[0].results[0].alternatives[0].transcript;
     console.log(transcript)
 })

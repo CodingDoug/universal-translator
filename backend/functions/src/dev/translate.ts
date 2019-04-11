@@ -18,8 +18,9 @@ export {}
 
 const serviceAccount = require("../../service-account-credentials.json");
 
-const { Translate } = require('@google-cloud/translate')
-const translate = new Translate({ credentials: serviceAccount })
+import * as translate from '@google-cloud/translate'
+const client = new translate.Translate({ credentials: serviceAccount })
 
-translate.getLanguages()
+client.getLanguages()
 .then(res => console.log(res))
+.catch(error => console.log(error))
