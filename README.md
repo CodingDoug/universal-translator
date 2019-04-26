@@ -20,11 +20,12 @@ This setup assumes you are already familiar with how Firebase and Google Cloud p
 
 1. Create a Firebase project in the [Firebase console](https://console.firebase.google.com/)
 1. Go to the Authentication product tab and enable Google authentication.
-1. Go to the Database product tab and enable Firestore.
+1. Go to the Database product tab and enable Cloud Firestore.
 1. Go to the Storage product tab and enable Cloud Storage.
 1. Enable Blaze plan billing on the project (required for the Google Cloud APIs used here)
-1. In the [Cloud console](https://console.cloud.google.com/) for the same project, enable both the Cloud Translation API and the Cloud Speech API.
+1. In the [Cloud console](https://console.cloud.google.com/) for the same project, enable both the Cloud Translation API and the Cloud Speech-to-Text API.
 1. Install the [Firebase CLI](https://firebase.google.com/docs/cli/)
+1. Clone this repo.
 
 ### Backend project setup
 
