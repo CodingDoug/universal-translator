@@ -31,11 +31,11 @@ dependencies {
     implementation "com.android.support:customtabs:${android_support_version}"
     implementation "com.android.support:design:${android_support_version}"
 
-    implementation 'com.google.firebase:firebase-core:16.0.8'
-    implementation 'com.google.firebase:firebase-auth:16.2.1'
-    implementation 'com.google.firebase:firebase-storage:16.1.0'
-    implementation 'com.google.firebase:firebase-firestore:18.2.0'
-    implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
+    implementation 'com.google.firebase:firebase-core:16.0.9'
+    implementation 'com.google.firebase:firebase-auth:17.0.0'
+    implementation 'com.google.firebase:firebase-storage:17.0.0'
+    implementation 'com.google.firebase:firebase-firestore:19.0.1'
+    implementation 'com.firebaseui:firebase-ui-auth:5.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
