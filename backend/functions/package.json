@@ -11,15 +11,15 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@google-cloud/speech": "^2.3.1",
-    "@google-cloud/translate": "^2.1.4",
-    "firebase-admin": "^8.0.0",
-    "firebase-functions": "^2.3.1",
+    "@google-cloud/speech": "^3.2.1",
+    "@google-cloud/translate": "^4.1.0",
+    "firebase-admin": "^8.1.0",
+    "firebase-functions": "^3.0.1",
     "source-map-support": "^0.5.12"
   },
   "devDependencies": {
-    "tslint": "^5.16.0",
-    "typescript": "^3.5.1"
+    "tslint": "^5.17.0",
+    "typescript": "^3.5.2"
   },
   "engines": {
     "node": "8"
