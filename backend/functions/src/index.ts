@@ -32,7 +32,7 @@ const bucket = admin.storage().bucket()
 const speechClient = new speech.SpeechClient()
 const translateClient = new translate.Translate()
 
-const LANGUAGES = ['en', 'es', 'pt', 'de', 'ja', 'hi', 'nl', 'fr', 'pl', 'he', 'ru', 'uk']
+const LANGUAGES = ['en', 'es', 'pt', 'de', 'ja', 'hi', 'nl', 'fr', 'pl', 'he', 'ru', 'uk', 'zh']
 
 const UPLOADS_COLLECTION = 'uploads'
 const UPLOADS_PREFIX = 'uploads'
