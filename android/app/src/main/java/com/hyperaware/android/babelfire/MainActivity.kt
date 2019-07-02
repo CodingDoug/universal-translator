@@ -299,7 +299,8 @@ class MainActivity : AppCompatActivity() {
             else if (trans != null && trans is Map<*, *>) {
                 val translations = safeMapCast(trans)
                 val sb = StringBuilder()
-                translations.entries.forEach { entry ->
+                val sorted = translations.entries.sortedBy { entry -> entry.key }
+                sorted.forEach { entry ->
                     val lang = entry.key
                     val text = entry.value
                     sb.append("$lang: $text\n")
