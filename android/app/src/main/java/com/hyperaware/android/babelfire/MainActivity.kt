@@ -59,7 +59,8 @@ class MainActivity : AppCompatActivity() {
             "עברית" to "he",
             "русский" to "ru",
             "Українська" to "uk",
-            "汉语" to "zh"
+            "汉语" to "zh",
+            "ภาษาไทย" to "th"
         )
     }
 
