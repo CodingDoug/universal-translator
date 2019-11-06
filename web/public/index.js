@@ -30,8 +30,6 @@ window.addEventListener('DOMContentLoaded', e => {
     })
 
     const firestore = firebase.firestore()
-    // Temporary
-    firestore.settings({ timestampsInSnapshots: true })
     const uploads = firestore.collection('uploads')
 
     function onNext(querySnapshot) {
