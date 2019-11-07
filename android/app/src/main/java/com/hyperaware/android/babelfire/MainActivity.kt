@@ -60,7 +60,8 @@ class MainActivity : AppCompatActivity() {
             "русский" to "ru",
             "Українська" to "uk",
             "汉语" to "zh",
-            "ภาษาไทย" to "th"
+            "ภาษาไทย" to "th",
+            "norsk" to "no"
         )
     }
 

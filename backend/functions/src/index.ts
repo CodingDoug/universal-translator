@@ -25,14 +25,12 @@ const speech = require('@google-cloud/speech')
 admin.initializeApp()
 
 const firestore = admin.firestore()
-// Temporary timestamp settings
-firestore.settings({ timestampsInSnapshots: true })
 const bucket = admin.storage().bucket()
 
 const speechClient = new speech.SpeechClient()
 const translateClient = new translate.Translate()
 
-const LANGUAGES = ['en', 'es', 'pt', 'de', 'ja', 'hi', 'nl', 'fr', 'pl', 'he', 'ru', 'uk', 'zh', 'th']
+const LANGUAGES = ['en', 'es', 'pt', 'de', 'ja', 'hi', 'nl', 'fr', 'pl', 'he', 'ru', 'uk', 'zh', 'th', 'no']
 
 const UPLOADS_COLLECTION = 'uploads'
 const UPLOADS_PREFIX = 'uploads'
