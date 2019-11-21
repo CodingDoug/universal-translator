@@ -30,8 +30,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:17.2.1'
     implementation 'com.google.firebase:firebase-auth:19.1.0'
     implementation 'com.google.firebase:firebase-storage:19.1.0'
-    implementation 'com.google.firebase:firebase-firestore:21.2.1'
-    implementation 'com.firebaseui:firebase-ui-auth:6.0.1'
+    implementation 'com.google.firebase:firebase-firestore:21.3.0'
+    implementation 'com.firebaseui:firebase-ui-auth:6.1.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
