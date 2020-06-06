@@ -19,7 +19,7 @@ sourceMapSupport.install()
 
 import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
-import * as translate from '@google-cloud/translate'
+import { v2 as translate } from '@google-cloud/translate'
 const speech = require('@google-cloud/speech')
 
 admin.initializeApp()
