@@ -20,14 +20,14 @@ sourceMapSupport.install()
 import * as functions from 'firebase-functions'
 import * as admin from 'firebase-admin'
 import { v2 as translate } from '@google-cloud/translate'
-const speech = require('@google-cloud/speech')
+import { SpeechClient, protos } from '@google-cloud/speech'
 
 admin.initializeApp()
 
 const firestore = admin.firestore()
 const bucket = admin.storage().bucket()
 
-const speechClient = new speech.SpeechClient()
+const speechClient = new SpeechClient()
 const translateClient = new translate.Translate()
 
 const LANGUAGES = ['en', 'es', 'pt', 'de', 'ja', 'hi', 'nl', 'fr', 'pl', 'he', 'ru', 'uk', 'zh', 'th', 'no']
@@ -179,7 +179,7 @@ function getRecordingFileInfo(object: functions.storage.ObjectMetadata): Recordi
 async function recognizeSpeech(metadata: RecordingMetadata): Promise<string> {
     const languageCode = metadata.language
     const sampleRateHertz = metadata.sampleRate
-    const encoding = metadata.encoding
+    const encoding = metadata.encoding as keyof typeof protos.google.cloud.speech.v1.RecognitionConfig.AudioEncoding
 
     const recognizeRequest = {
         config: {
@@ -193,14 +193,25 @@ async function recognizeSpeech(metadata: RecordingMetadata): Promise<string> {
     }
 
     console.info('recognizeRequest:', recognizeRequest)
-    const recognizeResponse = await speechClient.recognize(recognizeRequest)
+    const [ recognizeResponse ] = await speechClient.recognize(recognizeRequest)
     console.log('recognizeResponse:', recognizeResponse)
-    if (recognizeResponse.length === 0
-        || recognizeResponse[0].results.length === 0
-        || recognizeResponse[0].results[0].alternatives.length === 0) {
-            throw new Error("No speech recognized")
+    if (recognizeResponse.results && recognizeResponse.results.length > 0) {
+        const results = recognizeResponse.results[0]
+        if (results.alternatives && results.alternatives.length > 0) {
+            const alternatives = results.alternatives[0]
+            if (alternatives.transcript) {
+                return alternatives.transcript
+            }
+        }
     }
-    return recognizeResponse[0].results[0].alternatives[0].transcript
+    throw new Error("No speech recognized")
+
+    // if (recognizeResponse.length === 0
+    //     || recognizeResponse[0].results.length === 0
+    //     || recognizeResponse[0].results[0].alternatives.length === 0) {
+    //         throw new Error("No speech recognized")
+    // }
+    // return recognizeResponse.results[0].alternatives[0].transcript
 }
 
 
